@@ -1,0 +1,21 @@
+{
+  "name": "esoui-deploy-action",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GitHub Action that deploys add-on release to ESO UI",
+  "main": "/dist/main.js",
+  "scripts": {
+    "test": "node dist/main.js"
+  },
+  "author": "Joshua Shaffer",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0",
+    "axios": "^0.21.1",
+    "form-data": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.33"
+  }
+}

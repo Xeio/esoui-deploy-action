@@ -1,0 +1,24 @@
+name: 'ESO UI Publish'
+description: 'Publishes add-on to ESO UI'
+inputs:
+  addon-file-path:
+    description: 'Path to the add-on declaration file to parse versioning from'
+    required: true
+  upload-zip-path:
+    description: 'Path to zip file to upload to ESO UI as the new version'
+    required: true
+  addon-id:
+    description: 'ID of the add-on on ESO UI'
+    required: true
+  eso-ui-api-key:  # API token generated from https://www.esoui.com/downloads/filecpl.php?action=apitokens
+    description: 'ESO UI API token'
+    required: true
+  github-api-key: 
+    description: 'GitHub API taken'
+    required: true
+outputs:
+  success: 
+    description: 'Success indicator'
+runs:
+  using: 'node14'
+  main: 'dist/main.js'
