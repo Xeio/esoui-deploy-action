@@ -44,4 +44,6 @@ jobs:
             #ESO UI API Key, should be stored in GitHub secrets
             eso-ui-api-key: ${{secrets.ESOUI_API_TOKEN}}
             github-api-key: ${{secrets.GITHUB_TOKEN}}
+            #Optional: If true will hit the update test URL, rather than doing an actual update to the add-on
+            test-only: false
 ```
