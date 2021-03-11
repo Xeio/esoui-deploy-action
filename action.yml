@@ -1,5 +1,8 @@
 name: 'ESO UI Publish'
 description: 'Publishes add-on to ESO UI'
+branding:
+  icon: 'upload'
+  color: 'orange'
 inputs:
   addon-file-path:
     description: 'Path to the add-on declaration file to parse versioning from'
