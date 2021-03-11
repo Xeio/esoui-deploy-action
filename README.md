@@ -36,7 +36,7 @@ jobs:
         uses: Xeio/esoui-deploy-action@main
         with:
             #Inside the folder configured above, this should be the add-on definition txt file (that has Title, Description, files, ect.)
-            addon-file-path: .\AddOnFolderName\AddOnDefinitonFile.txt 
+            addon-file-path: ./AddOnFolderName/AddOnDefinitonFile.txt 
             #Match generated zip file name above
             upload-zip-path: esoui_release.zip
             #Add-on ID from ESO UI
