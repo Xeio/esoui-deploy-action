@@ -19,6 +19,9 @@ inputs:
   github-api-key: 
     description: 'GitHub API taken'
     required: true
+  test-only: 
+    description: 'Uses the test endpoint for updates'
+    default: false
 outputs:
   success: 
     description: 'Success indicator'

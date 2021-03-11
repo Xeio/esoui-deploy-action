@@ -9985,7 +9985,8 @@ const form_data_1 = __importDefault(__nccwpck_require__(4334));
 const fs = __importStar(__nccwpck_require__(5747));
 const GET_DETAILS_URL = 'https://api.esoui.com/addons/details/{0}.json';
 const COMPAT_LIST_URL = 'https://api.esoui.com/addons/compatible.json';
-const UPDATE_URL = 'https://api.esoui.com/addons/updatetest';
+const UPDATE_URL = 'https://api.esoui.com/addons/update';
+const UPDATE_URL_TEST = 'https://api.esoui.com/addons/updatetest';
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -10085,7 +10086,8 @@ function sendUpdate(addonInfo, esouiApiKey, zipPath) {
         if (addonInfo.releaseText) {
             updateData.append('changelog', addonInfo.releaseText);
         }
-        return axios_1.default.post(UPDATE_URL, updateData, { headers: Object.assign({ 'x-api-token': esouiApiKey }, updateData.getHeaders()) });
+        const url = core.getInput('test-only') ? UPDATE_URL_TEST : UPDATE_URL;
+        return axios_1.default.post(url, updateData, { headers: Object.assign({ 'x-api-token': esouiApiKey }, updateData.getHeaders()) });
     });
 }
 run();

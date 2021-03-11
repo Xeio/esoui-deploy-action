@@ -7,7 +7,8 @@ import * as fs from 'fs'
 
 const GET_DETAILS_URL = 'https://api.esoui.com/addons/details/{0}.json'
 const COMPAT_LIST_URL = 'https://api.esoui.com/addons/compatible.json'
-const UPDATE_URL = 'https://api.esoui.com/addons/updatetest'
+const UPDATE_URL = 'https://api.esoui.com/addons/update'
+const UPDATE_URL_TEST = 'https://api.esoui.com/addons/updatetest'
 
 async function run(): Promise<void> {
   try {
@@ -130,7 +131,8 @@ async function sendUpdate(addonInfo:AddOnInfo, esouiApiKey:string, zipPath:strin
     updateData.append('changelog', addonInfo.releaseText)
   }
 
-  return axios.post(UPDATE_URL, updateData, { headers: {
+  const url = core.getInput('test-only') ? UPDATE_URL_TEST : UPDATE_URL
+  return axios.post(url, updateData, { headers: {
     'x-api-token': esouiApiKey,
     ...updateData.getHeaders()
   }})
