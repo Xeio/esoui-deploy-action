@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "description": "GitHub Action that deploys add-on release to ESO UI",
-  "main": "/dist/main.js",
+  "main": "./source/index.ts",
   "scripts": {
-    "test": "node dist/main.js"
+    "build": "ncc build",
+    "test": "node dist/index.js"
   },
   "author": "Joshua Shaffer",
   "license": "MIT",
@@ -16,6 +17,8 @@
     "form-data": "^4.0.0"
   },
   "devDependencies": {
-    "@types/node": "^14.14.33"
+    "@types/node": "^14.14.33",
+    "@vercel/ncc": "^0.27.0",
+    "typescript": "^4.2.3"
   }
 }

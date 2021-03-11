@@ -24,4 +24,4 @@ outputs:
     description: 'Success indicator'
 runs:
   using: 'node12'
-  main: 'dist/main.js'
+  main: 'dist/index.js'
