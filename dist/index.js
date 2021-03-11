@@ -10086,7 +10086,11 @@ function sendUpdate(addonInfo, esouiApiKey, zipPath) {
         if (addonInfo.releaseText) {
             updateData.append('changelog', addonInfo.releaseText);
         }
-        const url = core.getInput('test-only') ? UPDATE_URL_TEST : UPDATE_URL;
+        var url = UPDATE_URL;
+        if (core.getInput('test-only') == "true") {
+            url = UPDATE_URL_TEST;
+            core.info("Using update test endpoint");
+        }
         return axios_1.default.post(url, updateData, { headers: Object.assign({ 'x-api-token': esouiApiKey }, updateData.getHeaders()) });
     });
 }

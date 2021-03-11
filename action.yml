@@ -21,7 +21,7 @@ inputs:
     required: true
   test-only: 
     description: 'Uses the test endpoint for updates'
-    default: false
+    default: 'false'
 outputs:
   success: 
     description: 'Success indicator'
